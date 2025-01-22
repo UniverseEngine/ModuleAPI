@@ -4,10 +4,11 @@
 #include <string>
 #include <memory>
 
+// Entry point must declare the ModuleAPIExport macro to export the function.
 #ifdef _WIN32
-#define DLLEXPORT __declspec(dllexport)
+#define ModuleAPIExport extern "C" __declspec(dllexport)
 #else
-#define DLLEXPORT __attribute__((visibility("default")))
+#define ModuleAPIExport extern "C" __attribute__((visibility("default")))
 #endif
 
 namespace Universe::ModuleAPI
