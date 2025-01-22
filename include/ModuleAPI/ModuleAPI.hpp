@@ -127,7 +127,7 @@ namespace Universe::ModuleAPI
          * @param details The details of the module.
          * @param moduleInterface The interface to the module.
          */
-        virtual void OnModuleLoad(ModuleDetails& details, IModuleInterface* moduleInterface) = 0;
+        virtual void OnModuleLoad(ModuleDetails& details, IModuleInterface& moduleInterface) = 0;
 
         /**
          * @brief Called on each tick of the module.
