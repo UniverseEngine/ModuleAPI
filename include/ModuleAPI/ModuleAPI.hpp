@@ -119,6 +119,15 @@ namespace Universe::ModuleAPI
 
     /**
      * @brief Interface for handling module events.
+     * @details This interface is used to handle events related to module loading and ticking.
+     * @note Users must implement this interface to create a functional module that can handle these events.
+     *       Additionally, an entry point function must be provided to load the module.
+     *
+     * Example of an entry point function for a module named "HashingModule":
+     * extern "C" ModuleAPIExport IModuleHandler* CreateModuleHandler()
+     * {
+     *     return HashingModule::m_moduleHandler.get();
+     * }
      */
     class IModuleHandler {
     public:
